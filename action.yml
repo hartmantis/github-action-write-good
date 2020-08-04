@@ -1,13 +1,16 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: Write Good
+description: Run the write-good linter for English prose
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  path:
+    description: Path to run write-good against
     required: true
-    default: '1000'
+    default: '**/*.md'
 outputs:
-  time: # output will be available to future steps
-    description: 'The message to output'
+  output:
+    description: The output from running write-good
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: node12
+  main: dist/index.js
+branding:
+  icon: book
+  color: purple

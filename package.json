@@ -1,35 +1,44 @@
 {
-  "name": "javascript-action",
-  "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "name": "write-good",
+  "version": "0.0.1",
+  "description": "This action runs the `write-good` linter for English prose",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
-    "prepare": "ncc build index.js -o dist --source-map",
+    "prepare": "ncc build index.js -o dist --source-map && TMP=$(mktemp -d) && ncc build node_modules/write-good/bin/write-good.js -o $TMP && mv $TMP/index.js dist/write-good.js && rmdir $TMP",
     "test": "jest",
     "all": "npm run lint && npm run prepare && npm run test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/roboticcheese/github-action-write-good.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
     "JavaScript"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "Jonathan Hartman <j@hartman.io>",
+  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/roboticcheese/github-action-write-good/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/roboticcheese/github-action-write-good#readme",
   "dependencies": {
-    "@actions/core": "^1.1.1"
+    "@actions/core": "^1.2.4",
+    "@actions/github": "^4.0.0",
+    "glob": "^7.1.6",
+    "write-good": "^1.0.2"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
-    "eslint": "^7.4.0",
-    "jest": "^26.1.0"
+    "eslint": "^7.6.0",
+    "husky": "^4.2.5",
+    "jest": "^26.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prepare && git add dist/"
+    }
   }
 }
