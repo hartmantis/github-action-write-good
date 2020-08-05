@@ -22,7 +22,7 @@ jobs:
       - uses: ./
         id: run_myself
         continue-on-error: true
-      - run: echo "${{steps.run_myself.outputs.output}}" | grep '"was stolen" may be passive voice on line 3 at column 11'
+      - run: echo '${{steps.run_myself.outputs.output}}' | grep '"was stolen" may be passive voice on line 3 at column 11'
   integration_custom_path:
     runs-on: ubuntu-latest
     steps:
