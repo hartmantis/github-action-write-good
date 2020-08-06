@@ -1,6 +1,6 @@
 {
-  "name": "write-good",
-  "version": "0.0.1",
+  "name": "github-action-write-good",
+  "version": "1.0.1",
   "description": "This action runs the `write-good` linter for English prose",
   "main": "index.js",
   "scripts": {
