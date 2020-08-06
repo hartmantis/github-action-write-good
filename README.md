@@ -1,7 +1,7 @@
 # Write Good GitHub Action
 
 <p align="left">
-  <a href="https://github.com/roboticcheese/github-action-write-good/actions"><img alt="Tests Status" src="https://github.com/roboticcheese/github-action-write-good/workflows/Tests/badge.svg"></a>
+  <a href="https://github.com/roboticcheese/github-action-write-good/actions"><img alt="CI Status" src="https://github.com/roboticcheese/github-action-write-good/workflows/ci/badge.svg"></a>
 </p>
 
 This action runs the `write-good` linter for English prose.
