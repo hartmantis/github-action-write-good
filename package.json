@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/roboticcheese/github-action-write-good#readme",
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.2.5",
     "@actions/github": "^4.0.0",
     "glob": "^7.1.6",
     "write-good": "^1.0.3"
