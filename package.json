@@ -28,7 +28,7 @@
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
     "glob": "^7.1.6",
-    "write-good": "^1.0.3"
+    "write-good": "^1.0.4"
   },
   "devDependencies": {
     "@zeit/ncc": "^0.22.3",
